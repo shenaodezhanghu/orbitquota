@@ -1,0 +1,16 @@
+bin/
+obj/
+diagnostics/
+settings.json
+self-test-error.txt
+capture-error.txt
+.build/
+dist/
+staging/
+.vs/
+*.user
+*.suo
+*.zip
+*.log
+.env
+.env.*

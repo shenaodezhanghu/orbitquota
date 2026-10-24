@@ -1,0 +1,35 @@
+<Window x:Class="CodexIsland.IslandWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:CodexIsland"
+ Title="OrbitQuota" Width="178" Height="178" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent" Topmost="True" ShowInTaskbar="False" UseLayoutRounding="True" SnapsToDevicePixels="True" ToolTipService.IsEnabled="False">
+ <Window.Resources><Style x:Key="Tab" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}"><Setter Property="Padding" Value="12,5"/><Setter Property="FontSize" Value="10"/><Setter Property="Foreground" Value="#8590A2"/></Style></Window.Resources>
+ <Border x:Name="Shell" Margin="6" CornerRadius="21" BorderThickness="1" BorderBrush="#344156" MouseEnter="OnEnter" MouseLeave="OnLeave" MouseLeftButtonUp="OnShellClick" PreviewMouseLeftButtonDown="BeginMove" PreviewMouseMove="MoveIsland" PreviewMouseLeftButtonUp="EndMove">
+  <Border.Background><LinearGradientBrush StartPoint="0,0" EndPoint=".3,1"><GradientStop Color="#101C2D"/><GradientStop Color="#0C121C" Offset=".65"/><GradientStop Color="#13151B" Offset="1"/></LinearGradientBrush></Border.Background>
+  <Grid>
+   <local:OrbitScene x:Name="Sky" Height="164" VerticalAlignment="Top" Margin="1,1,1,0" IsHitTestVisible="False"/>
+   <Grid x:Name="Details" Margin="20,174,20,14" Visibility="Hidden" Opacity="0" IsHitTestVisible="False">
+    <Grid.RowDefinitions><RowDefinition Height="34"/><RowDefinition Height="*"/><RowDefinition Height="16"/></Grid.RowDefinitions>
+    <Grid>
+     <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,7,0,0"><TextBlock Text="OBSERVATORY" FontSize="9" Foreground="#8B9DB5"/><Ellipse x:Name="LiveDot" Width="3" Height="3" Fill="#9CD9BF" Margin="8,0,0,0"/></StackPanel>
+     <Border HorizontalAlignment="Right" VerticalAlignment="Top" Background="#172130" CornerRadius="9" Padding="2"><StackPanel Orientation="Horizontal"><Button x:Name="QuotaTab" Content="额度" Style="{StaticResource Tab}" Click="SelectQuota"/><Button x:Name="UsageTab" Content="用量" Style="{StaticResource Tab}" Click="SelectUsage"/></StackPanel></Border>
+    </Grid>
+    <Grid x:Name="QuotaPage" Grid.Row="1">
+     <Grid.RowDefinitions><RowDefinition Height="64"/><RowDefinition Height="64"/></Grid.RowDefinitions>
+     <Grid><TextBlock Text="太阳 · 本周剩余" Foreground="#B5A58B" FontSize="10"/><TextBlock x:Name="WeekValue" HorizontalAlignment="Right" FontSize="17" FontWeight="Medium" Margin="0,-4,0,0"/>
+      <Border Height="2" Background="#292D36" CornerRadius="1" VerticalAlignment="Top" Margin="0,23,0,0" ClipToBounds="True"><Border x:Name="WeekFill" Background="#D8AC6D" CornerRadius="1" HorizontalAlignment="Left"/></Border>
+      <TextBlock x:Name="WeekReset" VerticalAlignment="Top" Margin="0,32,0,0" Foreground="#65758D" FontSize="10"/>
+     </Grid>
+     <Grid Grid.Row="1"><TextBlock Text="月亮 · 五小时剩余" Foreground="#9EAFC9" FontSize="10"/><TextBlock x:Name="FiveValue" HorizontalAlignment="Right" FontSize="17" FontWeight="Medium" Margin="0,-4,0,0"/>
+      <Border Height="2" Background="#292D36" CornerRadius="1" VerticalAlignment="Top" Margin="0,23,0,0" ClipToBounds="True"><Border x:Name="FiveFill" Background="#A9BEDF" CornerRadius="1" HorizontalAlignment="Left"/></Border>
+      <TextBlock x:Name="FiveReset" VerticalAlignment="Top" Margin="0,32,0,0" Foreground="#65758D" FontSize="10"/>
+     </Grid>
+    </Grid>
+    <Grid x:Name="UsagePage" Grid.Row="1" Visibility="Collapsed">
+     <Grid.RowDefinitions><RowDefinition Height="48"/><RowDefinition Height="49"/><RowDefinition Height="37"/></Grid.RowDefinitions>
+     <Grid><TextBlock x:Name="TodayTokens" FontSize="26" FontWeight="Medium" VerticalAlignment="Top"/><TextBlock x:Name="DayLabel" Text="今日 Tokens" Foreground="#7E8FA9" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,13,0,0"/></Grid>
+     <Canvas x:Name="Spark" Grid.Row="1" Height="44" Width="284" ClipToBounds="True"/>
+     <Grid Grid.Row="2"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions><StackPanel><TextBlock Text="今日平均输出 /min" Foreground="#74849D" FontSize="9"/><TextBlock x:Name="Speed" FontSize="12" Margin="0,3,0,0"/></StackPanel><StackPanel Grid.Column="1" HorizontalAlignment="Right"><TextBlock x:Name="CostCaption" Text="API 等价 · USD" Foreground="#74849D" FontSize="9"/><TextBlock x:Name="Cost" FontSize="12" Margin="0,3,0,0"/></StackPanel></Grid>
+    </Grid>
+    <Grid Grid.Row="2" VerticalAlignment="Bottom"><TextBlock x:Name="Model" Foreground="#52627C" FontSize="9" TextTrimming="CharacterEllipsis" Margin="0,0,70,0"/><TextBlock x:Name="Status" Foreground="#52627C" FontSize="9" HorizontalAlignment="Right"/></Grid>
+   </Grid>
+  </Grid>
+ </Border>
+</Window>

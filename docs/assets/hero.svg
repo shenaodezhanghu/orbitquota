@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360">
+ <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0a1424"/><stop offset="1" stop-color="#11141b"/></linearGradient></defs>
+ <rect width="1100" height="360" rx="24" fill="url(#bg)"/>
+ <g font-family="Segoe UI,Arial,sans-serif">
+  <text x="64" y="85" font-size="13" fill="#91a2ba" letter-spacing="3">CODEX · WINDOWS · LOCAL FIRST</text>
+  <text x="60" y="158" font-size="60" font-weight="600" fill="#eff3f8">OrbitQuota</text>
+  <text x="64" y="204" font-size="22" fill="#b0c0d3">Your quota, in orbit.</text>
+  <text x="64" y="260" font-size="17" fill="#7c91ac">日月记录额度，专注留给工作。</text>
+  <text x="64" y="307" font-size="11" fill="#53677f">品牌插画 · 实际界面见下方预览</text>
+ </g>
+ <g transform="translate(850 177)">
+  <circle r="128" fill="none" stroke="#63553e"/>
+  <circle r="88" fill="none" stroke="#425b7b"/>
+  <circle r="42" fill="#1c5c89"/><path d="M-9-39l18 7 14 17-7 12-14-3-4 28-17-10-10-25-12-10z" fill="#548e80"/><path d="M-5-42a42 42 0 000 84l15-84z" fill="#091625" opacity=".85"/>
+  <circle r="42" fill="none" stroke="#5681a0"/>
+  <g transform="translate(113 -60)"><circle r="11" fill="#edc885"/><path d="M0-18v-4m0 44v-4m18-18h4m-44 0h4m31-13 3-3m-32 32 3-3m26 0 3 3m-32-32 3 3" stroke="#b3935c" stroke-linecap="round"/></g>
+  <g transform="translate(-69 55)"><circle r="9" fill="#c2d2eb"/><circle cx="-5" cy="-2" r="8" fill="#132034"/></g>
+  <g fill="#75879f"><circle cx="-130" cy="-115" r="1"/><circle cx="53" cy="-143" r="1.3"/><circle cx="-101" cy="109" r="1"/><circle cx="140" cy="59" r="1"/></g>
+ </g>
+</svg>
